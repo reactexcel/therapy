@@ -3,8 +3,8 @@ exports.orderDetails = async (req, res) => {
    try {
     let orderDetails
     const data = {
-        vendorAccountId:157134,
-        apiSecretKey:'1cb7d091-9aca-4cab-bee9-2bd0cc73b0d6'
+        vendorAccountId:process.env.VENDOR_ID,
+        apiSecretKey:process.env.API_SECRET
     }
     const config = {
         method: 'post',
@@ -16,8 +16,8 @@ exports.orderDetails = async (req, res) => {
         data
     }
     const dataOrderDetails = {
-        vendorAccountId:157134,
-        apiSecretKey:'1cb7d091-9aca-4cab-bee9-2bd0cc73b0d6'
+        vendorAccountId:process.env.VENDOR_ID,
+        apiSecretKey:process.env.API_SECRET
     }
     
     let orderList = await  axios.request(config)
